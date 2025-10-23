@@ -30,9 +30,9 @@ try {
 
  #création des utilisateurs
 
- New-ADUser -Name "jean dupont" -GivenName "jean" -Surname "dupont" -SamAccountName "jean" -UserPrincipalName "jean@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true
-New-ADUser -Name "paul garde" -GivenName "paul" -Surname "garde" -SamAccountName "paul" -UserPrincipalName "paul@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true
-New-ADUser -Name "tom ricard" -GivenName "tom" -Surname "ricard" -SamAccountName "tom" -UserPrincipalName "tom@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true
+New-ADUser -Name "jean dupont" -GivenName "jean" -Surname "dupont" -SamAccountName "jean" -UserPrincipalName "jean@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "paul garde" -GivenName "paul" -Surname "garde" -SamAccountName "paul" -UserPrincipalName "paul@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true -PasswordNeverExpires $true
+New-ADUser -Name "tom ricard" -GivenName "tom" -Surname "ricard" -SamAccountName "tom" -UserPrincipalName "tom@entrepriseXY.fr" -Path "DC=entrepriseXY,DC=fr" -AccountPassword (ConvertTo-SecureString "P@ssword" -AsPlainText -Force) -Enabled $true -PasswordNeverExpires $true
 
 Add-ADGroupMember -Identity "IT_Group" -Members "jean"
 Add-ADGroupMember -Identity "RH_Group" -Members "paul"
